@@ -199,6 +199,7 @@ if not lua_system_path:
 if os.environ.get('NO_RESOLVE_C_CLIENT_DEP', None):
     has_c_client = True
     libraries = libraries + ['aerospike']
+    extra_objects = extra_objects + [os.environ['AEROSPIKE_LIB_PATH']]
     lua_src_path = os.environ.get('AEROSPIKE_LUA_PATH', lua_system_path)
 else:
     has_c_client = False
